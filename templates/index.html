@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>great-number-game</title>
 </head>
 
@@ -12,7 +13,7 @@
         <h1>Welcome to the Great Number Game!</h1>
         <h2>Iam thinking of a number between 1 and 100</h2>
         <h2>Take a guess !</h2>
-        <h2>You try until now <span>{{ times }}</span> Times !</h2>
+        <h2>You try until now <span>{{ count }}</span> Times !</h2>
         <div class="box" id="box" style="background-color: {{ boxcolor }}; ">{{text}}</div>
         <input type="user_number" name='user_input'>
         <button>Submit</button>
@@ -20,7 +21,9 @@
     </form>
 
     <form action="/restcounter" method="POST">
-        <button>Rest Counter</button>
+        <button id="rest" type="submit" class="btn btn-danger">Rest Counter !</button>
+        <h2>NOTE : When refresh Page Number will change ! </h2>
+
     </form>
 
     <style>
@@ -41,7 +44,15 @@
             font-weight: bold;
             font-family: cursive;
             font-size: 30px;
-            margin: 10px auto;
+            margin: 30px auto;
+        }
+
+        #rest{
+            margin: 40px auto;
+            width: 50%;
+            height: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
     </style>
 </body>
